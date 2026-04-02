@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Learning</title>
+</head>
+<body>
+    <script>
+
+        var arr = ['a', 'b', 'c', 'd', 'e']
+        arr.unshift('n','i')
+        arr.shift()
+        arr.splice(0,1,'n')
+        arr.pop()
+        arr.push('k')
+        delete arr[5]
+        console.log(arr)
+        console.log(arr.join(''))
+
+        var str='nisha'
+        var split=str.split('')
+        console.log(split)
+        
+        let first_arr=['n','i','s','h','a']
+        let second_arr=['k','a','l','a','i']
+        let third_arr=['e','r','r','o','r']
+        let final_arr=[...first_arr, ...second_arr]
+        console.log(final_arr)
+        console.log(first_arr.concat(second_arr).concat(third_arr))
+
+        var str=`he is trying hard to success in his life !!!!`
+        var split=str.split(' ')
+        var joint=split.join('')
+        console.log(str)
+        console.log(split)
+        console.log(joint)
+        console.log(joint.length)
+        console.log(str.split(' ').join('').length)
+    </script>
+    
+</body>
+</html>
