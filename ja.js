@@ -315,7 +315,7 @@
 // var new_map=  new Map ()
 // new_map.set('a',1)
 // new_map.set('b',2)
-// console.log(new_map)
+// console.log(new_map[])
 
 // for (let i of new_map){
 //     console.log(i)
