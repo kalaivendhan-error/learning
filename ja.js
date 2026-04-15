@@ -230,7 +230,7 @@
 
 
 
-          //MAP FUNCTIONS ${does not change the real value}
+//MAP FUNCTIONS ${does not change the real value}
 // var num=[1,2,3,7,4,6]
 // num.map((no)=> console.log(no*no))
 // num.map((no)=> {
@@ -242,7 +242,7 @@
 // })
 
 
-            //FOR EACH ${does not change the real values}
+//FOR EACH ${does not change the real values}
 // var num=[0,2,3,7,4,6]
 // result={
 //     1:'error',
@@ -252,15 +252,15 @@
 // })
 // console.log(result)
 // var add =num.map((no)=> `<li>${no}</li>`)
-    // .join('')
-    // var ad =document.createElement('li')
-    // ad.innerHTML= no
-    // document.querySelector(".ul").innerHTML=add
-    // console.log(add)
+// .join('')
+// var ad =document.createElement('li')
+// ad.innerHTML= no
+// document.querySelector(".ul").innerHTML=add
+// console.log(add)
 
 
 
-            //FILTERS
+//FILTERS
 // var num=[1,2,3,7,4,6,-1,-5]
 // result={name:'kalai'}
 // var new_num=num.filter((no, index) =>{
@@ -287,7 +287,7 @@
 //         accumulator[alpha]=1
 //     }
 //     return accumulator
-   
+
 // },{});
 // console.log(result)
 
@@ -300,8 +300,8 @@
 
 
 
-            //MAP fn and SET fn
-            
+//MAP fn and SET fn
+
 // var newvalue=[1,2,3]
 // var newset=  new Set (newvalue)
 // newset.add(2)
@@ -327,3 +327,28 @@
 // })
 // console.log(new_map.keys())
 // console.log(new_map.values())
+
+
+
+
+            //getters and setters method
+var object = {
+    name: 'kalai',
+    age: 20,
+    statu: 'studing',
+    hobby: ['handball', 'cricket', 'batmiton'],
+    get updates(){
+        return `getters and setters are working successfully`
+    },
+    set updates(value) {  //set methods has value as a parameter{required}
+        this.hobby.push(value[0])
+        this.hobby.push(value[1])
+        this.name=value[2]
+    },
+
+
+}
+object.name='error'
+object.updates=['target ball', 'valley ball','kalaivendhan']
+console.log(object.updates)
+console.log(object)
