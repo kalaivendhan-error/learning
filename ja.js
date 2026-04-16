@@ -332,23 +332,73 @@
 
 
             //getters and setters method
-var object = {
-    name: 'kalai',
-    age: 20,
-    statu: 'studing',
-    hobby: ['handball', 'cricket', 'batmiton'],
-    get updates(){
-        return `getters and setters are working successfully`
-    },
-    set updates(value) {  //set methods has value as a parameter{required}
-        this.hobby.push(value[0])
-        this.hobby.push(value[1])
-        this.name=value[2]
-    },
+// var object = {
+//     name: 'kalai',
+//     age: 20,
+//     statu: 'studing',
+//     hobby: ['handball', 'cricket', 'batmiton'],
+//     get updates(){
+//         return `getters and setters are working successfully`
+//     },
+//     set updates(value) {  //set methods has value as a parameter{required}
+//         this.hobby.push(value[0])
+//         this.hobby.push(value[1])
+//         this.name=value[2]
+//     },
 
+
+// }
+// object.name='error'
+// object.updates=['target ball', 'valley ball','kalaivendhan']
+// console.log(object.updates)
+// console.log(object)
+
+
+
+            //class
+class Users{
+    static totalUser =0
+    constructor(name, age){
+        this.name= name   // instances varible
+        this.age= age
+        Users.totalUser++
+    }
+    static count(){
+        return `total no. of users is ${Users.totalUser}`
+    }  //referred as common varibale
+
+    login(){
+        return `hi ${this.name}`
+    }
+    logout(){
+        return 'thank you visit again'
+    }
 
 }
-object.name='error'
-object.updates=['target ball', 'valley ball','kalaivendhan']
-console.log(object.updates)
-console.log(object)
+
+class PaidUsers extends Users{ //Inheritance class {derived cls or sub cls}
+    constructor(name, age){
+        super(name,age);
+        // this.name=name;
+        // this.age=age
+        this.storage= '100GB';
+    }
+    login(){
+        return `hi ${this.name} sir !!`
+    }
+    logout(){
+        return "thanks for visiting sir"
+    }
+    fun(){
+        console.log('your are able to use the premium access')
+    }
+}
+
+let user_1=new Users('kalai', 20)
+let user_2=new Users('mullai', 20)
+let user_3=new Users('vicky', 20)
+let user_4=new PaidUsers('error', 21)
+
+
+console.log(user_4.login())
+console.log(user_4.storage)
