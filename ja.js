@@ -315,7 +315,7 @@
 // var new_map=  new Map ()
 // new_map.set('a',1)
 // new_map.set('b',2)
-// console.log(new_map[])
+// console.log(new_map)
 
 // for (let i of new_map){
 //     console.log(i)
@@ -331,7 +331,7 @@
 
 
 
-            //getters and setters method
+//             // getters and setters method
 // var object = {
 //     name: 'kalai',
 //     age: 20,
@@ -352,53 +352,83 @@
 // object.updates=['target ball', 'valley ball','kalaivendhan']
 // console.log(object.updates)
 // console.log(object)
+// console.clear()
+
+
+// function add(a,b){
+//     this.A=a
+//     this.B=b
+//     console.log(A+B)
+// }
+// add(2,1)
+
+
+            //adding protype funnctions
+// function fun(name,age) {
+//     this.name = name
+//     this.age = age
+// }
+// fun.prototype.welcome=function(){ //adding prototype funtion
+//     console.log('you are welcome')
+// }
+// fun.prototype.nickname='kalai'
+// let uers1= new fun('error', 20)
+// uers1.welcome()
+// console.log(uers1)
+// console.log(uers1.nickname)
 
 
 
-            //class
-class Users{
-    static totalUser =0
-    constructor(name, age){
-        this.name= name   // instances varible
-        this.age= age
-        Users.totalUser++
-    }
-    static count(){
-        return `total no. of users is ${Users.totalUser}`
-    }  //referred as common varibale
+                //class
+// class Users {
+//     static totalUser = 0
+//     constructor(name, age) {
+//         this.name = name   // instances varible
+//         this.age = age
+//         Users.totalUser++
+//     }
+//     static count() {
+//         return `total no. of users is ${Users.totalUser}`
+//     }  //referred as common varibale
 
-    login(){
-        return `hi ${this.name}`
-    }
-    logout(){
-        return 'thank you visit again'
-    }
+//     login() {
+//         return `hi ${this.name}`
+//     }
+//     logout() {
+//         return 'thank you visit again'
+//     }
 
-}
+// }
 
-class PaidUsers extends Users{ //Inheritance class {derived cls or sub cls}
-    constructor(name, age){
-        super(name,age);
-        // this.name=name;
-        // this.age=age
-        this.storage= '100GB';
-    }
-    login(){
-        return `hi ${this.name} sir !!`
-    }
-    logout(){
-        return "thanks for visiting sir"
-    }
-    fun(){
-        console.log('your are able to use the premium access')
-    }
-}
+// class PaidUsers extends Users { //Inheritance class {derived cls or sub cls}
+//     constructor(name, age) {
+//         super(name, age);
+//         // this.name=name;
+//         // this.age=age
+//         this.storage = '100GB';
+//     }
+//     login() {
+//         console.log(`hi ${this.name} sir !!`) //over riding for paid Users
+//         return this  //'this' return the object again
+//     }
+//     logout() {
+//         return "thanks for visiting sir"
+//     }
+//     fun() {
+//         console.log('your are able to use the premium access')
+//     }
+// }
 
-let user_1=new Users('kalai', 20)
-let user_2=new Users('mullai', 20)
-let user_3=new Users('vicky', 20)
-let user_4=new PaidUsers('error', 21)
+// let user_1 = new Users('kalai', 20)
+// let user_2 = new Users('mullai', 20)
+// let user_3 = new Users('vicky', 20)
+// let user_4 = new PaidUsers('error', 21)
+// console.log(user_4.login().logout()) //method chaning
 
 
-console.log(user_4.login())
-console.log(user_4.storage)
+            //import and export module
+import {movement as move,stand as st, walk} from "./for_ja.js"
+let man_1= new move()
+man_1.run()
+st()
+walk()
