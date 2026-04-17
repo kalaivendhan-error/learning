@@ -422,7 +422,7 @@
 // let user_1 = new Users('kalai', 20)
 // let user_2 = new Users('mullai', 20)
 // let user_3 = new Users('vicky', 20)
-// let user_4 = new PaidUsers('error', 21)
+// let user_4 = new PaidUsers('karthiga', 21)
 // console.log(user_4.login().logout()) //method chaning
 
 
