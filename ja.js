@@ -13,27 +13,39 @@
 // const { isValidElement } = require("react")
 
 
+//        //  <!-- HIGHER ORDER FUNCTIONS -->(Takes another FUNCTONS as an argument)
+// function greet(name) {
+//     return "Hello " + name;
+// }
 
+// function processUser(func, name) {
+//     return func(name);
+// }
+
+// console.log(processUser(greet, "Kalai"));
 
 // let add = (a,b) => a+b
-// let sub = (a,b) => {return (a-b)}
+// let sub = (a,b) => {return (a-b)}  //Because {} are used, return must
+// let div = (a,b) => {return (a/b)}
+
+// // let operation=(op, a, b)=>op(a,b)
 
 // function operation(op, a, b){
 //     return op(a,b)
 // }
-// let result=operation(div, 10, 5)
+// let result=operation(div, 10, 5)   //div passed into operation, Callback Function
 // console.log(result)
+// console.log(operation(add,4,4))
 
 
 
 
 
-
-//                    <!-- Promises Syntax -->
+                //    <!-- Promises Syntax -->
 
 // let p= new Promise((resolve, reject) =>
 // {
-//     let a = 1 + 2
+//     let a = 1 + 1
 //     if (a==2){
 //         resolve('success')
 //     }
@@ -43,42 +55,67 @@
 // } )
 
 // p.then((message) => {
-//     console.log("this is correct " + message)})
+//     console.log(`this is correct !!!! ${message}`)})
 //     .catch((message)=>{
 //         console.log("this is wrong " + message)
 //     })
 
 
 
+            // PROMISES TUTORIALS
+// let is_mullai_calling= true  //only one true and false scenerio will accept
+// let is_nisha_calling= true   //if more than 1 true scenerio happens, very first true scenerio will execute
+// function tutorialPromise(){
+// return new Promise((resolve, reject)=>{
+//      if (is_mullai_calling){
+//     resolve({
+//         name: 'mullai',
+//         relation: 'friend'})
+//   }else if(is_nisha_calling){
+//     resolve({
+//         name: 'nisha',
+//         relation: 'girlfriend'})
+//   }else{
+//     reject("No one is calling : ")
+//   }
+
+// })}
+
+// tutorialPromise().then((resolve) => {console.log(`${resolve.name} is calling, ${resolve.relation}`)})
+// .catch((reject) => {console.log(reject)})
 
 
 
-// const userLeft = true
-// const userWatchCat = false
 
-// function watchTutorials(noerrorcall, errorcall ){
-//     if (userLeft){
-//         errorcall({
-//             name: 'user left',
-//             message: ':('
-//         })
-//     }
-//     else if(userWatchCat){
-//         errorcallback({
-//             name: 'user watching cat',
-//             message: 'watching cat vedios'
-//         })
-//     } else{
-//         callback('thumbs up and subscribe')
-//     }
-// }
 
-// watchTutorials((msg) =>{
-//     console.log('success ' + msg.name)
-// }, (error) => {
-//     console.log(error.name+ " " + error.message )
-// }
-// )
+
+            // <-- CALLBACK FUNTIONS-->
+const userLeft = true
+const userWatchCat = false
+
+function watchTutorials(noerrorcall, errorcall, callback ){
+    if (userLeft){
+        errorcall({
+            name: 'user left',
+            message: ':('
+        })
+    }
+    else if(userWatchCat){
+        noerrorcall({
+            name: 'user watching cat',
+            message: 'watching cat vedios'
+        })
+    } else{
+        callback('thumbs up and subscribe')
+    }
+}
+
+watchTutorials((msg) =>{
+    console.log('success ' + msg.name)
+}, (error) => {
+    console.log(error.name+ " " + error.message )
+}
+)
 
 
 
@@ -110,28 +147,6 @@
 
 
 
-
-//             PROMISES
-// const is_nisha_calling= false
-// const is_mullai_calling= false
-// function tutorialPromise(){
-// return new Promise((resolve, reject)=>{
-//      if (is_mullai_calling){
-//     resolve({
-//         name: 'mullai',
-//         relation: 'friend'})
-//   }else if(is_nisha_calling){
-//     resolve({
-//         name: 'nisha',
-//         relation: 'girlfriend'})
-//   }else{
-//     reject("No one is calling : ")
-//   }
-
-// })}
-
-// tutorialPromise().then((resolve) => {console.log(resolve.name)})
-// .catch((reject) => {console.log(reject)})
 
 
 
@@ -229,8 +244,8 @@
 
 
 
-
-//MAP FUNCTIONS ${does not change the real value}
+  
+         //MAP FUNCTIONS ${does not change the real value}
 // var num=[1,2,3,7,4,6]
 // num.map((no)=> console.log(no*no))
 // num.map((no)=> {
@@ -242,7 +257,7 @@
 // })
 
 
-//FOR EACH ${does not change the real values}
+          //FOR EACH ${does not change the real values}
 // var num=[0,2,3,7,4,6]
 // result={
 //     1:'error',
@@ -260,7 +275,7 @@
 
 
 
-//FILTERS
+          //FILTERS
 // var num=[1,2,3,7,4,6,-1,-5]
 // result={name:'kalai'}
 // var new_num=num.filter((no, index) =>{
@@ -426,9 +441,9 @@
 // console.log(user_4.login().logout()) //method chaning
 
 
-            //import and export module
-import {movement as move,stand as st, walk} from "./for_ja.js"
-let man_1= new move()
-man_1.run()
-st()
-walk()
+//             //import and export module
+// import {movement as move,stand as st, walk} from "./for_ja.js"
+// let man_1= new move()
+// man_1.run()
+// st()
+// walk()

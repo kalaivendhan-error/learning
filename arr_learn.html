@@ -9,40 +9,46 @@
     <script>
 
         var arr = ['a', 'b', 'c', 'd', 'e']
-        arr.unshift('n','i')
-        arr.shift()
-        arr.splice(0,1,'n')
-        arr.pop()
-        arr.push('k')
-        delete arr[5]
-        console.log(arr)
-        console.log(arr.join(''))
+        // arr.unshift('n','i') //add at front
+        // arr.shift() //del the first element
+        // arr.splice(0,1,'n') //del and add wrt to cmd
+        // arr.pop() // del the last element
+        // arr.push('k') //add at the end
+        // delete arr[4] // del element in index position
+        // console.log(arr)
+        // console.log(arr.join('')) //join the array
 
         var str='nisha'
-        var split=str.split('')
-        console.log(split)
-        console.clear()
+        var split=str.split('') //split nd give as array
+        // console.log(split)
+        // console.clear()
 
-        
+        // let num=[1,2,7,4,5,8,7]
+        // console.log(num)
+        // console.log(JSON.stringify(num))
         let first_arr=['n','i','s','h','a']
         let second_arr=['k','a','l','a','i']
         let third_arr=['e','r','r','o','r']
-        let final_arr=[...first_arr, ...second_arr]
-        var summa =JSON.stringify(first_arr)
-        console.log(JSON.parse(summa))
+        let final_arr=[...first_arr, ...second_arr] //spread opertor(spreading the ele inside the mentioned array)
+        var summa =JSON.stringify(first_arr) //converting array to string
+        console.log(JSON.parse(summa)) //converting string into array 
         console.log(summa)
-        console.log(first_arr)
-        console.log(final_arr)
-        console.log(first_arr.concat(second_arr).concat(third_arr))
+        console.log(...first_arr)
+        // console.log(first_arr)
+        // console.log(final_arr)
+        console.log(first_arr.concat(second_arr).concat(third_arr)) //add array using CONCAT opertor
 
         var str=`he is trying hard to success in his life !!!!`
-        var split=str.split(' ')
-        var joint=split.join('')
+        var split=str.split(' ')  //split and stored in array type
+        var joint=split.join('') //join the element even the array (only join the array)
         console.log(str)
-        console.log(split)
+        console.log(split) 
         console.log(joint)
         console.log(joint.length)
         console.log(str.split(' ').join('').length)
+
+        const no=Math.random()*10
+        console.log(no)
     </script>
     
 </body>
