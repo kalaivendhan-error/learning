@@ -41,7 +41,7 @@
 
 
 
-                //    <!-- Promises Syntax -->
+//    <!-- Promises Syntax -->
 
 // let p= new Promise((resolve, reject) =>
 // {
@@ -62,97 +62,44 @@
 
 
 
-            // PROMISES TUTORIALS
+
+        // PROMISES TUTORIALS
 // let is_mullai_calling= true  //only one true and false scenerio will accept
 // let is_nisha_calling= true   //if more than 1 true scenerio happens, very first true scenerio will execute
 // function tutorialPromise(){
-// return new Promise((resolve, reject)=>{
-//      if (is_mullai_calling){
-//     resolve({
-//         name: 'mullai',
-//         relation: 'friend'})
+//     return new Promise((resolve, reject)=>{
+//              if (is_mullai_calling){
+//                 resolve({
+//                         name: 'mullai',
+//                         relation: 'friend'})
 //   }else if(is_nisha_calling){
 //     resolve({
 //         name: 'nisha',
 //         relation: 'girlfriend'})
 //   }else{
-//     reject("No one is calling : ")
-//   }
+//         reject("No one is calling : ")
+//       }
 
-// })}
+//     })}
 
-// tutorialPromise().then((resolve) => {console.log(`${resolve.name} is calling, ${resolve.relation}`)})
-// .catch((reject) => {console.log(reject)})
+//     tutorialPromise().then((resolve) => {console.log(`${resolve.name} is calling, ${resolve.relation}`)})
+//     .catch((reject) => {console.log(reject)})
+//     .finally(()=>{console.log('code running')})
 
-
-
-
-
-
-            // <-- CALLBACK FUNTIONS-->
-const userLeft = true
-const userWatchCat = false
-
-function watchTutorials(noerrorcall, errorcall, callback ){
-    if (userLeft){
-        errorcall({
-            name: 'user left',
-            message: ':('
-        })
-    }
-    else if(userWatchCat){
-        noerrorcall({
-            name: 'user watching cat',
-            message: 'watching cat vedios'
-        })
-    } else{
-        callback('thumbs up and subscribe')
-    }
-}
-
-watchTutorials((msg) =>{
-    console.log('success ' + msg.name)
-}, (error) => {
-    console.log(error.name+ " " + error.message )
-}
-)
+                // PROMISE METHODS(all, allSettle, any, race)
+//Promise.all() ---> (i) show op as first rejected promises
+//                   (ii) fi there is no rejects,  then show all resolve
+//Promise.any() ---> (i) show op as first fulfilled promises
+//                   (ii) fi there is no fulfilled promise,  then show all rejected promise
+//Promise.race()---> (i) show op as first fulfilled or rejected promises
+//                   (ii) no matter, the promise resolve or reject, if it complete then show it
+//Promise.allSettle()---> (i) waiting for all promises to finish
 
 
 
 
 
-//             TUTORIALS CALLBACKS
-// const is_nisha_calling= true
-// const is_mullai_calling= false
-// // const mullai= false
-// function calling(call, nocall){
-//   if (is_mullai_calling){
-//     call({
-//         name: 'mullai',
-//         relation: 'friend'})
-//   }else if(is_nisha_calling){
-//     call({
-//         name: 'nisha',
-//         relation: 'girlfriend'})
-//   }else{
-//     nocall("No one is calling : ")
-//   }
-// }
-
-// calling((goodnews)=>{
-//     console.log(goodnews.name+ ' '+goodnews.relation + " is calling")},
-// (badnews) =>{
-// console.log(badnews)
-// })
-
-
-
-
-
-
-
-
-//                 TUTORIAL FOR ASYNC AND AWAIT
+//                 TUTORIAL FOR ASYNC AND AWAIT  ????
 
 // async function fn(){
 //     if (false){
@@ -186,21 +133,114 @@ watchTutorials((msg) =>{
 // }
 // called()
 
-
 // async await is the alternate source of Promise's then() catch()
 
 
 
 
 
+//                  <!-- CALL BACK FUNCTIONS  -->
+// function greet(name){
+//     console.log("Hello " + name)
+// }
 
-//             ERROR HANDLING $(Try, Catch, Throw{finally})
+// function processUser(callback){ //processUser(greet)
+//     callback("Kalai") //greet("kalai")
+// }
+// greet('kalai')
+// processUser(greet)
+
+// function call(callback){
+//         console.log('working..')
+//         callback()
+// }
+// // let fn=()=>{console.log('work finished')}
+// call(()=>{console.log('work finished')})
+
+//              <-- CALLBACK FUNTIONS-->
+// const userLeft = false
+// const userWatchCat = false
+
+// function watchTutorials(noerrorcall, errorcall, callback ){
+//     if (userLeft){
+//         errorcall({
+//             name: 'user left',
+//             message: ':('
+//         })
+//     }
+//     else if(userWatchCat){
+//         noerrorcall({
+//             name: 'user watching cat',
+//             message: 'watching cat vedios'
+//         })
+//     } else{
+//         callback('thumbs up and subscribe')
+//     }
+// }
+
+// watchTutorials((msg) =>{
+//     console.log('success ' + msg.name)},
+//  (error) => {
+//     console.log(error.name+ " " + error.message )},
+//   (txt) =>console.log(txt)  
+// )
+
+
+
+
+
+            // TUTORIALS CALLBACKS
+
+// const is_nisha_calling= false
+// const is_mullai_calling= false
+// // const mullai= false
+// function calling(call, nocall){   //two callback fn in given
+//   if (is_mullai_calling){
+//     call({
+//         name: 'mullai',
+//         relation: 'friend'})
+//   }else if(is_nisha_calling){
+//     call({
+//         name: 'nisha',
+//         relation: 'girlfriend'})
+//   }else{
+//     nocall("No one is calling : ")
+//   }
+// }
+
+// calling((goodnews)=>{  //so two callback results is wanted to execute
+//     console.log(goodnews.name+ ' '+goodnews.relation + " is calling")},
+// (badnews) =>{
+// console.log(badnews)
+// })
+
+
+
+
+                        //GENERATOR FUNCTIONS  (function *add)
+// function *summa(){
+//         console.log('started')
+//         yield 10
+//         console.log('end')
+// }
+// let ref=summa(); //store the value to variable when fn call
+
+// console.log(ref.next()) // it continues the generator where it stops
+// console.log(ref.next())
+
+// console.log(summa().next()) //it created again and again new generator
+// console.log(summa().next())
+
+
+
+//             ERROR HANDLING $(Try, Catch, Throw{finally})  ???
 
 // try{
 //     var a=10;
 //     var b="kalai"
 //     var result=a+Number(b)
-//     // console.log(result)
+// //     console.log(result)
+// //     console.log(Number(b))
 //     if (isNaN(result))
 //         throw "enter a valid syntax" 
 // }
@@ -210,7 +250,7 @@ watchTutorials((msg) =>{
 
 
 
-//                 FETCHING   API
+//                 FETCHING   API  ????
 
 // console.log(fetch("https://api-thirukkural.vercel.app/api?num=3"))
 // fetch("https://api-thirukkural.vercel.app/api?num=3")
@@ -225,7 +265,7 @@ watchTutorials((msg) =>{
 // .then((msg) => console.log(msg[0].word))
 // .catch((err) => console.log(err))
 
-// GET, POST, PUT
+// GET, POST, PUT  ????
 
 // fetch('https://jsonplaceholder.typicode.com/todos',{
 //     method: 'POST',
@@ -244,20 +284,80 @@ watchTutorials((msg) =>{
 
 
 
-  
-         //MAP FUNCTIONS ${does not change the real value}
-// var num=[1,2,3,7,4,6]
-// num.map((no)=> console.log(no*no))
+
+            //MAP FUNCTIONS ${does not change the real value}
+
+// let num=[1,2,3,7,4,6]
+// num.map((element,index,array)=>{  //tree parameters of an map() 
+// console.log(element*element) 
+// if(element%2==0) console.log(element)
+// console.log(element) 
+// console.log(array) 
+// console.log(index)
+// })
 // num.map((no)=> {
-//     var ad =document.createElement('li')
-//     ad.innerHTML= no
-//     document.querySelector(".ul").append(ad)
-//     // var ul=document.querySelector(".ul")
-//     // ul.innerHTML=`<li>${no}</li>`
+// var ad =document.createElement('li')
+// ad.innerHTML= no
+// document.querySelector(".ul").append(ad)
+
+// var ul=document.querySelector(".ul")
+// ul.innerHTML+=`<li>${no}</li>`    
+// ul.innerHTML=`<li>${no}</li>`     //op 6
+// ul.append(`<li>${no}</li>`);      //opp   <li>1</li><li>2</li><li>3</li><li>7</li><li>4</li><li>6</li>
+// ul.innerHTML.append(`<li>${no}</li>`)    //innerHTML is the string type property, so .append() method doesn't work 
 // })
 
 
-          //FOR EACH ${does not change the real values}
+
+
+            //FILTERS
+
+// var num=[1,2,3,7,4,6,-1,-5]
+// var result={name:'kalai'}
+// var new_num=num.filter((no, index) =>{
+//     console.log(no*no) 
+//     result[index]=no    
+//     return no<0
+//     // return no>0
+// })
+// console.log(result)
+// console.log(new_num)
+
+
+// let object={
+//     me:'kalai',
+//     you:'erro'
+// }
+// let ref='me'
+// if (object[ref]) console.log('yes')
+//     else console.log('no')
+
+
+
+        // <-- REDUCE FUNTIONS-->
+
+// var arr =['a','f','d','a','h','u','d','m','h']
+// var result= arr.reduce((accumulator, alpha) => {    //alpha = 'a';
+//         if (accumulator[alpha]){                    //accumulator[alpha]  (produce boolean values)
+//         accumulator[alpha]++                        //is the same as:
+//     }else{                                          //accumulator.a  (it produces boolean values)
+//         accumulator[alpha]=1
+//     }
+//     return accumulator
+
+// },{}); //acc is mentioned as object type
+// console.log(result)
+
+
+// var num = [1, 2, 3, 8, 4, 6, -1, -5]
+// var output = num.filter(no => no > 0).reduce((acc, cno) => { return acc + cno },0) 
+// console.log(output)
+
+
+
+            
+            //FOR EACH ${does not change the real values} ???
+
 // var num=[0,2,3,7,4,6]
 // result={
 //     1:'error',
@@ -275,38 +375,6 @@ watchTutorials((msg) =>{
 
 
 
-          //FILTERS
-// var num=[1,2,3,7,4,6,-1,-5]
-// result={name:'kalai'}
-// var new_num=num.filter((no, index) =>{
-//     result[index]=no    
-//     return no<0
-//     // return no>0
-// })
-// console.log(result)
-// console.log(new_num)
-
-
-// var num=[1,2,3,8,4,6,-1,-5]
-// var output=num.filter(no => no>0).reduce((acc,cno) =>{return acc + cno})
-// console.log(output)
-
-
-
-
-// var arr =['a','f','d','a','h','u','d','m','h']
-// var result= arr.reduce((accumulator, alpha) => { 
-//         if (accumulator[alpha]){
-//         accumulator[alpha]++
-//     }else{
-//         accumulator[alpha]=1
-//     }
-//     return accumulator
-
-// },{});
-// console.log(result)
-
-
 // var newvalue=['1','2','3']
 // newvalue.map(n => console.log(n*n))
 // newvalue.forEach(n => console.log(n*n))
@@ -315,7 +383,7 @@ watchTutorials((msg) =>{
 
 
 
-//MAP fn and SET fn
+            //MAP fn and SET fn ???
 
 // var newvalue=[1,2,3]
 // var newset=  new Set (newvalue)
@@ -370,6 +438,37 @@ watchTutorials((msg) =>{
 // console.clear()
 
 
+
+
+                        //FACTORY functions (return an object based on demands)(no default prototype)
+
+// function ref(name,age){  //camelcase naming
+//         return{
+//                 name: name,
+//                 age, //ES3
+//                 job(){console.log('learning')}
+//         }
+// }
+// let  user1=ref('error',20)   //('new' not used)
+// let  user2=ref('kalai',20)
+// console.log(user1)
+// console.log(user2)
+ 
+
+                        //CONSTRUCTOR functions (fn used used with 'new' to create object)
+
+// function Const(name,age){     //(use prototype for methods)
+//                 this.name=name;
+//                 this.age=age;
+//                 function update(){console.log('learning in process')}  //this does not valid, instead we use prototype (still no error occured)
+// }
+// let use1= new Const('error', 20)
+// let use2= new Const('kalai', 20)
+// console.log(use1)
+// console.log(use2)
+
+
+
 // function add(a,b){
 //     this.A=a
 //     this.B=b
@@ -378,7 +477,7 @@ watchTutorials((msg) =>{
 // add(2,1)
 
 
-            //adding protype funnctions
+        //adding protype funnctions
 // function fun(name,age) {
 //     this.name = name
 //     this.age = age
@@ -394,10 +493,10 @@ watchTutorials((msg) =>{
 
 
 
-                //class
+        //class
 // class Users {
 //     static totalUser = 0
-//     constructor(name, age) {
+//         constructor(name, age) {
 //         this.name = name   // instances varible
 //         this.age = age
 //         Users.totalUser++
